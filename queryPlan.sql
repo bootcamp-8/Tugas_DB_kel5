@@ -1,7 +1,8 @@
--- Halaman depan - List of Kelas dan Mode Pembelajaran
-SELECT Kelas.nama_kelas, Mode_Pembelajaran.nama_mode
+-- Halaman depan - List of Kelas
+SELECT nama_kelas
 FROM Kelas
-LEFT JOIN Mode_Pembelajaran ON Kelas.id_kelas = Mode_Pembelajaran.kelasId;
+ORDER BY nama_kelas ASC;
+-- Hasil Tampil Mode Pembelajaran ketika kelas di pilih
 
 -- Halaman List of Mata Pelajaran
 SELECT Mata_Pelajaran.nama_matapelajaran, Mata_Pelajaran.jumlahBab
