@@ -3,6 +3,10 @@ SELECT nama_kelas
 FROM Kelas
 ORDER BY nama_kelas ASC;
 -- Hasil Tampil Mode Pembelajaran ketika kelas di pilih
+SELECT nama_mode
+FROM Mode_Pembelajaran
+WHERE kelasId='id kelas yang dipilih'
+ORDER BY nama_mode ASC;
 
 -- Halaman List of Mata Pelajaran
 SELECT Mata_Pelajaran.nama_matapelajaran, Mata_Pelajaran.jumlahBab
