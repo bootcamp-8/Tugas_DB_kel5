@@ -1,27 +1,34 @@
--- Halaman depan - List of Kelas dan Mode Pembelajaran
-SELECT Kelas.nama_kelas, Mode_Pembelajaran.nama_mode
+-- Halaman depan - List of Kelas
+SELECT nama_kelas
 FROM Kelas
-LEFT JOIN Mode_Pembelajaran ON Kelas.id_kelas = Mode_Pembelajaran.kelasId;
+ORDER BY nama_kelas ASC;
+-- Hasil Tampil Mode Pembelajaran ketika kelas di pilih
+SELECT * FROM Mode_Pembelajaran mp
+WHERE mp.kelasId = 1 ORDER BY mp.nama_mode ASC
 
 -- Halaman List of Mata Pelajaran
-SELECT Mata_Pelajaran.nama_matapelajaran, Mata_Pelajaran.jumlahBab
-FROM Mata_Pelajaran
-WHERE modeId = 'id_mode';
+SELECT * FROM Mata_Pelajaran 
+WHERE modeId = 1 ORDER BY nama_matapelajaran ASC;
 
 -- Halaman List of Bab
-SELECT Bab.nama_bab, Bab.jumlah_subbab, Bab.label_gratis, progresBab.progres
-FROM Bab
-LEFT JOIN progresBab ON Bab.id_bab = progresBab.babId
-WHERE mapelId = 'id_matapelajaran';
+SELECT * FROM Bab b 
+INNER JOIN progresBab pb
+ ON b.id_bab = pb.babId 
+WHERE b.mapelId = 1 
+AND pb.userId = 1 
+ORDER BY b.nama_bab ASC
 
 -- Halaman List of Sub-Bab
-SELECT Sub_Bab.nama_subbab, Sub_Bab.label_gratis, progresSubBab.progres
-FROM Sub_Bab
-LEFT JOIN progresSubBab ON Sub_Bab.id_subbab = progresSubBab.SubBabId
-WHERE id_bab = 'id_bab';
+SELECT * FROM Sub_Bab b 
+INNER JOIN progresSubBab pb ON b.id_subbab = pb.SubBabId 
+WHERE b.id_bab = 1 AND pb.userId = 1 
+ORDER BY b.nama_subbab ASC;
 
 -- Halaman List of Material
-SELECT Material.nama_material, Material.label, progresMaterial.statusProgres
-FROM Material
-LEFT JOIN progresMaterial ON Material.id_material = progresMaterial.materialId
-WHERE id_subbab = 'id_subbab';
+SELECT * FROM Material b 
+ INNER JOIN progresMaterial pb
+ ON b.id_material = pb.materialId
+ INNER join TipeMaterial t on b.tipe_id=t.id_tipe
+WHERE b.id_subbab = 1 
+AND pb.userId = 1 
+ORDER BY b.nama_material ASC
