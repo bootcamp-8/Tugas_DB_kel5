@@ -4,8 +4,7 @@
 
 ## Authors (Kelompok 5)
 
-[@zikran69](https://github.com/zikran69), [@nahira-dev](https://github.com/nahira-dev), [@rizqiau](https://github.com/rizqiau)
-, [@taufiqoo](https://github.com/taufiqoo), [@gonsura](https://github.com/gonsura), [@bahe-eman](https://github.com/bahe-eman), [@fadhilhasan](https://github.com/fadhilhasan)
+
 
 ---
 
