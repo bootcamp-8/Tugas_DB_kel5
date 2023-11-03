@@ -4,8 +4,6 @@
 
 ## Authors (Kelompok 5)
 
-
-
 ---
 
 ### ERD :
@@ -14,7 +12,7 @@
 
 ### Relational Db Model :
 
-![App Screenshot](/asset/tugas%20Kel5%20FSD%20HS%20DB.png)
+![App Screenshot](./asset/Relational%20DB.jpg)
 
 ### Query Plan :
 
